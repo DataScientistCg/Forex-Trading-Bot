@@ -61,8 +61,6 @@ This bot focuses on **trend-following strategies** using the **Supertrend indica
 - **LSTM bot** additionally uses:
   - `joblib`, `sklearn.preprocessing`, `tensorflow.keras.models`, `colorama`.
 
-Would you like me to add this breakdown in the README as well? 😊
-
 ---
 
 ## 1️⃣ LSTM-Based Trading Bot (`A_Final_Testing_code_.py`)
