@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forex Trading Bot Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #1e1e2f; color: #fff; text-align: center; }
+        .container { width: 80%; margin: auto; padding: 20px; background: #2a2a3c; box-shadow: 0px 0px 15px rgba(0,0,0,0.2); border-radius: 10px; }
+        h1 { color: #f1c40f; }
+        .bot-card { background: #33334d; padding: 15px; margin: 15px 0; border-radius: 10px; }
+        button { padding: 12px 20px; margin: 10px; cursor: pointer; border: none; font-size: 16px; border-radius: 5px; }
+        .start { background-color: #28a745; color: white; }
+        .stop { background-color: #dc3545; color: white; }
+        .logs { margin-top: 20px; background: #444; padding: 10px; text-align: left; height: 200px; overflow-y: auto; border-radius: 5px; }
+        canvas { background: white; border-radius: 10px; padding: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Forex Trading Bot Dashboard</h1>
+        
+        <div class="bot-card">
+            <h2>🤖 LSTM Trading Bot</h2>
+            <button class="start" onclick="startBot('lstm')">▶ Start</button>
+            <button class="stop" onclick="stopBot('lstm')">⏹ Stop</button>
+        </div>
+        
+        <div class="bot-card">
+            <h2>📈 KVO Trading Bot</h2>
+            <button class="start" onclick="startBot('kvo')">▶ Start</button>
+            <button class="stop" onclick="stopBot('kvo')">⏹ Stop</button>
+        </div>
+        
+        <div class="bot-card">
+            <h2>📉 Supertrend Trading Bot</h2>
+            <button class="start" onclick="startBot('supertrend')">▶ Start</button>
+            <button class="stop" onclick="stopBot('supertrend')">⏹ Stop</button>
+        </div>
+        
+        <h2>📊 Live Trade Data</h2>
+        <canvas id="tradeChart" width="400" height="200"></canvas>
+        
+        <div class="logs" id="logs">
+            <p><strong>📝 Logs:</strong></p>
+        </div>
+    </div>
+    
+    <script>
+        function startBot(botName) {
+            document.getElementById('logs').innerHTML += `<p>✅ ${botName.toUpperCase()} Bot Started...</p>`;
+            updateChart();
+        }
+        
+        function stopBot(botName) {
+            document.getElementById('logs').innerHTML += `<p>❌ ${botName.toUpperCase()} Bot Stopped.</p>`;
+        }
+        
+        function updateChart() {
+            var ctx = document.getElementById('tradeChart').getContext('2d');
+            var tradeChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['10:00', '10:05', '10:10', '10:15', '10:20'],
+                    datasets: [{
+                        label: 'Trade Performance',
+                        data: [100, 120, 110, 140, 130],
+                        borderColor: '#f1c40f',
+                        borderWidth: 2,
+                        fill: false,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: false }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
