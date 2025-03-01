@@ -6,6 +6,63 @@ This repository contains **3 separate Forex Trading Bots**, each implementing di
 2. **Klinger Volume Oscillator (KVO) Bot** (`kvo_fx.py`)
 3. **Supertrend Indicator Bot** (`supertrendx.py`)
 
+## **1️⃣ LSTM-Based Trading Bot (`A_Final_Testing_code_.py`)**
+This bot is **ML-based** and requires **data processing, machine learning, and trading-related** libraries.
+
+### **Libraries Used:**
+- `MetaTrader5` → For executing trades on MT5.
+- `colorama` → For colored terminal output.
+- `datetime` → Handling date and time.
+- `joblib` → Saving and loading trained ML models.
+- `numpy` → Numerical computations.
+- `pandas` → Handling and manipulating data.
+- `sklearn.preprocessing` → Data scaling and preprocessing.
+- `ta` → Technical analysis indicators.
+- `tensorflow.keras.models` → Implementing the LSTM model.
+- `time` → Handling time-based operations.
+- `traceback` → Debugging and error handling.
+- `warnings` → Suppressing unnecessary warnings.
+
+---
+
+## **2️⃣ Klinger Volume Oscillator (KVO) Bot (`kvo_fx.py`)**
+This bot is **volume-based** and uses libraries for **technical analysis and trade execution**.
+
+### **Libraries Used:**
+- `MetaTrader5` → For executing trades on MT5.
+- `datetime` → Handling date and time.
+- `numpy` → Numerical computations.
+- `pandas` → Handling and manipulating data.
+- `ta` → Technical indicators (like ATR, Pivot Points).
+- `time` → Handling time-based operations.
+- `traceback` → Debugging and error handling.
+- `warnings` → Suppressing unnecessary warnings.
+
+---
+
+## **3️⃣ Supertrend Indicator Bot (`supertrendx.py`)**
+This bot focuses on **trend-following strategies** using the **Supertrend indicator**.
+
+### **Libraries Used:**
+- `MetaTrader5` → For executing trades on MT5.
+- `datetime` → Handling date and time.
+- `numpy` → Numerical computations.
+- `pandas` → Handling and manipulating data.
+- `ta` → Technical indicators (like ATR, Pivot Points, Supertrend).
+- `time` → Handling time-based operations.
+- `traceback` → Debugging and error handling.
+- `warnings` → Suppressing unnecessary warnings.
+
+---
+
+### **Conclusion**
+- **All three bots** use:
+  - `MetaTrader5`, `datetime`, `numpy`, `pandas`, `ta`, `time`, `traceback`, `warnings`.
+- **LSTM bot** additionally uses:
+  - `joblib`, `sklearn.preprocessing`, `tensorflow.keras.models`, `colorama`.
+
+Would you like me to add this breakdown in the README as well? 😊
+
 ---
 
 ## 1️⃣ LSTM-Based Trading Bot (`A_Final_Testing_code_.py`)
